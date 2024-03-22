@@ -1,0 +1,109 @@
+*{
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+:root {
+    --color-p: #693725;
+    --color-s: white;
+    --color-acc: #D6A599;
+}
+.color_p{
+    color: var(--color-p);
+}
+.color_acc{
+    color: var(--color-acc);
+}
+.bg_p{
+    background-color: var(--color-p);
+}
+.bg_acc{
+    background-color: var(--color-acc) ;
+}
+.title-font{
+    font-family: "Ojuju", sans-serif;
+    font-style: normal;
+}
+.my_btn{
+    background-color: var(--color-acc);
+    padding: 10px;
+    padding-inline: 15px;
+    border-radius: 10px;
+    border: none;
+}
+.my_btn:hover{
+    background-color: #dfbeb6;
+    padding: 10px;
+    padding-inline: 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* SEZIONE TITOLO */
+.box_head{
+    height: 100%;
+    background-color: var(--color-p);
+}
+.boxQuote{
+    height: 25vh;
+}
+
+.img_dinamic{
+    height: 50%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgb(159, 157, 157);
+    animation: rotate 25s linear infinite;
+}
+@keyframes rotate {
+    0%{
+        transform: rotateZ(0deg);
+    }100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+/* SEZIONE NAVBAR */
+
+.transition{
+    transition: 0.5s;
+}
+
+.navbar_scrolled{
+    background-color: rgb(140, 73, 49,0.5)!important;
+    margin: 5vh 15vw;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-acc);
+    border-radius: 10px;
+
+}
+
+/* SEZIONE CATEGORIE */
+.img_category {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid var(--color-p);
+    padding: 5px;
+}
+/* SERVE PER AGGIUSTARE L ANIMAZIONE PERCHE MI CREAVA UNO SPAZIO FUORI DALLO SCHERMO */
+.animation{
+    overflow: hidden;
+}
+
+/* SEZIONE NUMERI */
+.box_number{
+    height: 100px;
+    background-color: var(--color-p);
+    border-radius: 20px;
+    border: 3px solid var(--color-acc);
+    color: var(--color-s);
+}
+
+/* SEZIONE ANNUNCI */
+
+.img_card{
+    transition: 0.5s;
+}
+
+.card:hover > div >img{
+    transform: scale(1.2);
+}
