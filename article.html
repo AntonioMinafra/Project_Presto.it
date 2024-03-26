@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                        <a class="nav-link " aria-current="page" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./article.html">Articoli</a>
+                        <a class="nav-link active" href="./article.html">Articoli</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Chi siamo</a>
@@ -63,39 +63,43 @@
     <!-- FINE SEZIONE NAVBAR -->
 
     <!-- SEZIONE ARTICOLI -->
-    <div class="container-fluid my-5">
+    <div class="container-fluid my-5 py-5">
         <div class="row">
             <!-- COLONNA DEL TITOLO -->
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <h2 class="title-font mt-5 border-bottom display-1 text-center color_p">Articoli</h2>
-            </div>
+            </div> -->
         </div>
-        <div class="row">
+        <div class="row justify-content-evenly">
             <!-- COLONNA DEI FILTRI -->
-            <div class="col-12 col-lg-4">
-                <h2 class="text-center color_p">FILTRA PER CATEGORIA</h2>
-                <div id="radioWrapper">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="All" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Tutte le Categorie
-                        </label>
+            <div class="col-12 col-lg-3">
+                <h2 class="title-font mt-5 border-bottom display-1 text-center color_p">Filtri</h2>
+                <div class="bowFiltri text-white">
+                    <h3 class="color_p title-font">FILTRA PER CATEGORIA</h3>
+                    <div id="radioWrapper">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="All" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Tutte le Categorie
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <h2 class="text-center">FILTRO PER PREZZO</h2>
-                <label for="customRange1" class="form-label">$ <span id="currentValue"></span></label>
-                <input id="inputPrice" type="range" class="form-range" max="" min="" value="">
-                <h2 class="text-center">FILTRO PER PAROLA</h2>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Inserisci la tua parola</label>
-                    <input type="text" class="form-control" id="inputWord" placeholder="">
+                    <h3 class="color_p title-font">FILTRO PER PREZZO</h3>
+                    <label for="customRange1" class="form-label fs-5">$ <span id="currentValue"></span></label>
+                    <input id="inputPrice" type="range" class="form-range" max="" min="" value="">
+                    <h3 class="color_p title-font">FILTRO PER PAROLA</h3>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"></label>
+                        <input type="text" class="form-control" id="inputWord" placeholder="Inserisci la tua parola">
+                    </div>
                 </div>
             </div>
 
 
 
             <!-- COLONNA DELLE CARTE -->
-            <div class=" col-12 col-lg-8 p-5">
+            <div class=" col-12 col-lg-8">
+                <h2 class="title-font mt-5 border-bottom display-1 text-center color_p">Articoli</h2>
                 <div class="container-fluid">
                     <div class="row justify-content-evenly" id="articlesWrapper">
 

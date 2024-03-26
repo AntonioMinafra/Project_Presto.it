@@ -70,22 +70,21 @@ setCategories()
 /* FILTRI PER CATEROGIE */
 let cheksInput = document.querySelectorAll(".form-check-input")
 
-function filteredByCategory() {
+function filteredByCategory(array) {
     let radiosBtn = Array.from(cheksInput)/* questo forza i dati e li mette in un array*/
     let checked = radiosBtn.find( (el)=> el.checked)
     if(checked.id == "All"){
-        createArticles(data)/* condizione che se il cheked (cioe l input) è all allora mi stampa le card di data cioe tutte altrimenti mi stampa l array filtered filtrato per categorie */
+        return array/* condizione che se il cheked (cioe l input) è all allora mi stampa le card di data cioe tutte altrimenti mi stampa l array filtered filtrato per categorie */
     }else {
         let filtered = data.filter( (el)=> el.categoria == checked.id)
-        createArticles(filtered)
+        return filtered
     }
 }
-
 /* CREO L EVENTO AL RADIO */
 
 cheksInput.forEach( (input)=>{
     input.addEventListener("input", ()=>{
-        filteredByCategory()
+        globalFiltered()
     })
 } )
 
@@ -106,54 +105,35 @@ function maxAndMinPrice() {
 maxAndMinPrice()
 
 /* ATTIVAZIONE FILTRO PREZZO */
-function filteredByPrice(){
-    let filtered = data.filter( (el)=> el.prezzo <= inputPrice.value )
-    createArticles(filtered)
+function filteredByPrice(array){
+    let filtered = array.filter( (el)=> el.prezzo <= inputPrice.value )
+    return filtered
 }
 
 inputPrice.addEventListener("input" , ()=>{
     currentValue.innerHTML = inputPrice.value
-    filteredByPrice()
+    globalFiltered()
 })
 
 /* FILTRO PER NOME */
 let inputWord = document.querySelector("#inputWord")
 
-function filteredByWord() {
-    let filtered = data.filter( (el)=> el.nome.toLowerCase().includes(inputWord.value.toLowerCase()))
-    createArticles(filtered)
+function filteredByWord(array) {
+    let filtered = array.filter( (el)=> el.nome.toLowerCase().includes(inputWord.value.toLowerCase()))
+    return filtered
 }
 
 inputWord.addEventListener("input", ()=> {
-    filteredByWord()
+    globalFiltered()
 })
 
+function globalFiltered(){
+    let filterByCategory = filteredByCategory(data)
+    let filterByPrice = filteredByPrice(filterByCategory)
+    let filterByWord = filteredByWord(filterByPrice)
+    createArticles(filterByWord)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 })
 /* FINE FECTH */
